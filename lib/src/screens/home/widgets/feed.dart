@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class Feeds extends StatelessWidget {
@@ -8,7 +6,7 @@ class Feeds extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 2,
+      itemCount: 10,
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
       physics: const NeverScrollableScrollPhysics(),
@@ -93,7 +91,7 @@ class FeedItem extends StatelessWidget {
             )),
         const SizedBox(height: 10),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Row(
             children: [
               Expanded(
@@ -101,27 +99,21 @@ class FeedItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: 25,
-                    height: 25,
-                    margin: const EdgeInsets.only(right: 20),
+                    margin: const EdgeInsets.only(right: 10),
                     child: Image.asset(
                       "assets/icons/love_outline.png",
                       scale: 2,
                     ),
                   ),
                   Container(
-                    width: 25,
-                    height: 25,
-                    margin: const EdgeInsets.only(right: 20),
+                    margin: const EdgeInsets.only(right: 10),
                     child: Image.asset(
                       "assets/icons/comment_outline.png",
                       scale: 2,
                     ),
                   ),
                   Container(
-                    width: 25,
-                    height: 25,
-                    margin: const EdgeInsets.only(right: 20),
+                    margin: const EdgeInsets.only(right: 10),
                     child: Image.asset(
                       "assets/icons/share_outline.png",
                       scale: 2,
@@ -138,6 +130,69 @@ class FeedItem extends StatelessWidget {
         ),
         const SizedBox(
           height: 10,
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Row(
+            children: [
+              ClipOval(
+                child: SizedBox(
+                  width: 26,
+                  height: 26,
+                  child: Image.asset("assets/avatars/mang_dadan.png"),
+                ),
+              ),
+              const SizedBox(
+                width: 6,
+              ),
+              const Expanded(
+                  child: Text.rich(
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      TextSpan(text: "Liked By ", children: [
+                        TextSpan(
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                            text: "Abdul,",
+                            children: [TextSpan(text: "Wawan.. ")]),
+                        TextSpan(text: "And", children: [
+                          TextSpan(
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                              text: " 100+ Lainya")
+                        ])
+                      ])))
+            ],
+          ),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: const Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                      child: Text.rich(
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          TextSpan(
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                              text: "Dadan Hidayat ",
+                              children: [
+                                TextSpan(
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.normal),
+                                    text:
+                                        "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ")
+                              ])))
+                ],
+              )
+            ],
+          ),
+        ),
+        const SizedBox(
+          height: 15,
         )
       ],
     );

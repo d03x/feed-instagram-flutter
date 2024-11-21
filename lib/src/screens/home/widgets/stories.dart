@@ -36,7 +36,7 @@ class Stories extends StatelessWidget {
                                             ? const AssetImage(
                                                 "assets/icons/stroke_on_solid.png")
                                             : const AssetImage(
-                                                "assets/avatar/mang_dadan.png"))),
+                                                "assets/avatars/mang_dadan.png"))),
                             child: Container(
                               decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
